@@ -1,1 +1,1 @@
-# scEC-T-seq
+# scECT-seq
