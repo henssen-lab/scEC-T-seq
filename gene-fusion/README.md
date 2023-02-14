@@ -1,6 +1,6 @@
 ## Gene fusion analysis code
 
-We describe below the gene fusion analysis from pseudobulk scEC&T-seq short-read data for TR14 and CHP212 neuroblastoma celllines.
+We describe below the gene fusion analysis from pseudobulk scEC&T-seq Illumina short-read data for TR14 and CHP212 neuroblastoma celllines.
 
 ### Installation
 
