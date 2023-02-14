@@ -10,7 +10,7 @@ Based on BLAST
 Rscript script_microhomology_analysis_BLAST_v2.R
 ```
 
-#### Generate violin plots of the length of microhomologies for both cell lines
+#### Plot the distribution of microhomology length for both cell lines (Violin plot)
 
 ```bash
 Rscript script_plot_microHOMlength_circles.R
