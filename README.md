@@ -5,16 +5,15 @@ This repository contains the data analysis of the paper _Chamorro et al. 2023_ [
 
 ### Project structure
 
-- [Structural variants analysis](sv-calling/README.md)
-- Copy-number analysis
-- [Gene fusion analysis](gene-fusion/README.md)
-- [ecDNA Reconstruction](ecdna-reconstruction/README.md)
-- [Microhomology analysis](microhom_analysis/README.md)
+- [Structural variants analysis](sv-calling)
+- [Gene fusion analysis](gene-fusion)
+- [ecDNA Reconstruction](ecdna-reconstruction)
+- [Microhomology analysis](microhom_analysis)
 
 ### Raw data
 
-Associated sequencing data have been deposited at the European Genome-phenome Archive under the accession number [EGA accession number].
+Associated sequencing data have been deposited on the European Genome-Phenome Archive under EGAS00001007026.
 
 ### License
 
-This code is distributed under the [License XXX]. Consult the accompanying [LICENSE](LICENSE) file for more details.
+This code is distributed under the MIT License. Consult the accompanying [LICENSE](LICENSE.md) file for more details.
