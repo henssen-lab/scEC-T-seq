@@ -9,6 +9,11 @@ This repository contains the data analysis of the paper _Chamorro et al. 2023_ [
 - [Gene fusion analysis](gene-fusion)
 - [ecDNA Reconstruction](ecdna-reconstruction)
 - [Microhomology analysis](microhom_analysis)
+- [scCircle-seq QC](CircleSeq_qc)
+- [ecDNA co-ocurrence](Co_ocurrence)
+- [Genome-wide DNA circularization](WholeGenomeHeatmap)
+- [Circular DNA size and number](Size_number)
+- [Visualization of single cell coverage in single cells on ecDNA](CircleSeq_qc)
 
 ### Raw data
 
