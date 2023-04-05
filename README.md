@@ -12,7 +12,7 @@ This repository contains the data analysis of the paper _Chamorro et al. 2023_ [
 - [scCircle-seq QC](CircleSeq_qc)
 - [ecDNA co-ocurrence](Co_ocurrence)
 - [Genome-wide DNA circularization](WholeGenomeHeatmap)
-- [Mitochondrial DNA analysis](mitochondria_plots)
+- [Mitochondrial DNA analysis](mitochondria_SNV_analysis)
 - [Circular DNA size and number](Size_number)
 - [Visualization of single cell coverage in single cells on ecDNA](CircleSeq_qc)
 
