@@ -1,0 +1,74 @@
+---
+title: "patient2_reconstruction"
+output: html_document
+params:
+  root: "patient2_nanopore"
+  sample: "patient2"
+  nodes: "patient2_nodes.bed"
+  connections: "patient2_connections.bed"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(BioCircos)
+# library(Repitools)
+library(pafr)
+library(ggplot2)
+library(gridExtra)
+library(StructuralVariantAnnotation)
+library(gTrack)
+library(gGnome)
+library(GenomicRanges)
+library(BSgenome.Hsapiens.UCSC.hg19)
+library(ggplot2)
+library(dplyr)
+library(parallel)
+library(plyranges)
+library(diffloop)
+
+```
+
+```{r include=FALSE}
+source('circular_patient2.R')
+```
+
+## Patient 2 manual reconstruction
+
+
+
+```{r, fig.height = 9, fig.width = 15}
+window <- GRanges("chr2", IRanges(15631400,16578682))
+bins <- tileGenome(seqinfo(BSgenome.Hsapiens.UCSC.hg19), tilewidth=100, cut.last.tile.in.chrom=TRUE)
+
+fsnv <- paste(params$root, "ngmlr_hg19.sniffles.filtered.high_curated.bedpe", sep="/")
+fcov <- paste(params$root, "coverage_hg19.bw", sep="/")
+gencode = gTrack::track.gencode(stack.gap = 2e5, cex.label = 0.5, height = 40,
+                                name = 'GENCODE', cached = T, cached.dir = "/home/mada/Downloads", labels.suppress.gr=T, gene.collapse = T, genes = c("MYCN", "DDX1", "NBAS"))
+
+reconstruct_coordinates <- read.table(params$nodes, header=FALSE, sep="\t")
+colnames(reconstruct_coordinates) <- c("chr", "start","end", "strand",	"target",	"coverage",	"structure","fragment")
+nodes<-makeGRangesFromDataFrame(reconstruct_coordinates,
+                         keep.extra.columns=FALSE,
+                         ignore.strand=FALSE,
+                         seqinfo=NULL,
+                         seqnames.field=c("seqnames", "seqname",
+                                          "chromosome", "chrom",
+                                          "chr", "chromosome_name",
+                                          "seqid"),
+                         start.field="start",
+                         end.field=c("end", "stop"),
+                         strand.field="strand",
+                         starts.in.df.are.0based=FALSE)
+edges<-read.table(params$connections, header=FALSE, sep="\t")
+colnames(edges)<- c("n1","n2","n1.side","n2.side")
+
+file_nodes <- params$nodes
+file_egdes <- params$connections
+draw_amplicon_manual(file_nodes, file_egdes, fcov, window, bins, 1800, gencode)
+
+```
+
+```{r, echo=TRUE}
+sessionInfo()
+```
