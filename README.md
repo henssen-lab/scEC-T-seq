@@ -1,7 +1,7 @@
 # scEC-T-seq
 
 ### Data analysis code
-This repository contains the data analysis of the paper _Chamorro et al. 2023_ [link to paper]
+This repository contains the data analysis of the paper _Chamorro González et al. 2023_ https://www.nature.com/articles/s41588-023-01386-y
 
 ### Project structure
 
